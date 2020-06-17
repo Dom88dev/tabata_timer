@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.dom_project.tabata_timer.viewmodel.WorkoutDetailViewModel" />
+
+        <variable
+            name="workout"
+            type="com.dom_project.tabata_timer.model.local.entity.Workout" />
+
+        <variable
+            name="isGif"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail_workout.DetailWorkoutActivity"
+        android:padding="16dp"
+        android:background="@color/colorPrimaryDark"
+        >
+
+        <TextView
+            android:id="@+id/workout_name"
+            android:transitionName="workout_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{workout.name}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:fontFamily="@font/ghana_choco"
+            android:includeFontPadding="false"
+            android:shadowColor="@color/colorPrimary"
+            android:shadowRadius="5.0"
+            android:shadowDy="5.0"
+            android:shadowDx="5.0"
+            android:drawableStart="@drawable/ic_chevron_left_white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/workout_thumbnail"
+            android:transitionName="workout_thumbnail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            imageUri="@{workout.thumbnail}"
+            android:scaleType="centerCrop"
+            android:onClick="@{(v) -> vm.refreshGif(v, workout.thumbnail)}"
+            app:layout_constraintTop_toBottomOf="@+id/workout_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="w, 6:9"
+            />
+
+        <TextView
+            android:id="@+id/label_play_gif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GIF"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            android:fontFamily="@font/ghana_choco"
+            android:includeFontPadding="false"
+            android:drawableStart="@drawable/ic_play_arrow_primary_dark"
+            android:drawablePadding="2dp"
+            android:background="@drawable/rectangle_line_rounded"
+            android:onClick="@{(v) -> vm.refreshGifByLabel(v, workout.thumbnail)}"
+            app:layout_constraintTop_toTopOf="@+id/workout_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/workout_thumbnail"
+            android:layout_margin="2dp"
+            android:paddingTop="3dp"
+            android:paddingStart="3dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="3dp"
+            isVisible="@{isGif}"
+            />
+
+        <TextView
+            android:id="@+id/label_how"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="운동방법"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/reko_font"
+            app:layout_constraintTop_toBottomOf="@+id/workout_thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/workout_how_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{workout.howTo}"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/jalnan"
+            app:layout_constraintTop_toBottomOf="@+id/label_how"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

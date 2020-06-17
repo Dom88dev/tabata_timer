@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <import type="com.dom_project.tabata_timer.model.local.entity.Workout"/>
+
+        <variable
+            name="vm"
+            type="com.dom_project.tabata_timer.viewmodel.TimerViewModel" />
+
+        <variable
+            name="circuit"
+            type="com.dom_project.tabata_timer.model.local.entity.Circuit" />
+
+        <variable
+            name="workouts"
+            type="java.util.List&lt;Workout>" />
+
+        <variable
+            name="indexWorkout"
+            type="Integer" />
+
+        <variable
+            name="indexSet"
+            type="Integer" />
+
+        <variable
+            name="maxTensDigit"
+            type="Integer" />
+
+        <variable
+            name="startUnitDigit"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.timer.TimerActivity">
+
+        <ImageView
+            android:id="@+id/workout_thumbnail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            imageUri="@{workouts.get(indexWorkout/2).thumbnail}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="w, 6:9"
+            />
+
+        <View
+            android:id="@+id/vail_during_rest"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorDark"
+            app:layout_constraintTop_toTopOf="@+id/workout_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/workout_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/workout_thumbnail"
+            app:layout_constraintBottom_toBottomOf="@id/workout_thumbnail"
+            isVisible="@{(indexWorkout%2 == 0)}"
+            />
+
+        <TextView
+            android:id="@+id/label_current_workout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{(indexWorkout%2 != 0) ? workouts.get(indexWorkout/2).name : (indexWorkout/2 == 0) ? @string/ready : @string/rest}"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:fontFamily="@font/ghana_choco"
+            android:shadowColor="@android:color/black"
+            android:shadowRadius="5.0"
+            android:shadowDx="5.0"
+            android:shadowDy="5.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"
+            />
+
+        <com.xenione.digit.TabDigit
+            android:id="@+id/digit_tens"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:backgroundColor="@android:color/black"
+            app:padding="10dp"
+            app:textColor="@android:color/white"
+            app:textSize="100sp"
+            app:cornerSize="@dimen/cardview_default_radius"
+            app:layout_constraintTop_toBottomOf="@+id/workout_thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/digit_unit"
+            app:layout_constraintWidth_percent=".2"
+            app:layout_constraintDimensionRatio="w, 9:6"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            maxTens="@{maxTensDigit}"
+            isWorkoutNow="@{(indexWorkout%2 != 0)}"
+            />
+
+        <com.xenione.digit.TabDigit
+            android:id="@+id/digit_unit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:backgroundColor="@android:color/black"
+            app:padding="10dp"
+            app:textColor="@android:color/white"
+            app:textSize="100sp"
+            app:cornerSize="@dimen/cardview_default_radius"
+            app:layout_constraintTop_toBottomOf="@+id/workout_thumbnail"
+            app:layout_constraintStart_toEndOf="@+id/digit_tens"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent=".2"
+            app:layout_constraintDimensionRatio="w, 9:6"
+            startUnit="@{startUnitDigit}"
+            isWorkoutNow="@{(indexWorkout%2 != 0)}"
+            />
+
+        <ImageView
+            android:id="@+id/ic_workout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_workout"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@+id/digit_tens"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_pause"
+            app:layout_constraintWidth_percent=".1"
+            app:layout_constraintDimensionRatio="w, 1:1"
+            app:layout_constraintHorizontal_bias=".05"
+            />
+
+        <TextView
+            android:id="@+id/text_workout_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/order(indexWorkout/2 +1, workouts.size())}"
+            android:textSize="36sp"
+            android:fontFamily="@font/reko_font"
+            android:includeFontPadding="false"
+            app:layout_constraintTop_toTopOf="@+id/ic_workout"
+            app:layout_constraintStart_toEndOf="@+id/ic_workout"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_workout"
+            app:layout_constraintWidth_percent=".4"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            />
+
+        <TextView
+            android:id="@+id/text_workout_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/set_order(indexSet, circuit.repeatCount)}"
+            android:textSize="36sp"
+            android:fontFamily="@font/reko_font"
+            android:includeFontPadding="false"
+            app:layout_constraintTop_toTopOf="@+id/ic_workout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_workout"
+            app:layout_constraintWidth_percent=".45"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintHorizontal_bias=".95"
+            />
+
+        <ImageButton
+            android:id="@+id/button_pre"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:src="@drawable/ic_fast_rewind_white"
+            android:tint="@color/colorPrimaryDark"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/button_stop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_pause"
+            app:layout_constraintTop_toTopOf="@+id/button_pause"
+            app:layout_constraintWidth_percent=".25"
+            android:onClick="@{() -> vm.onClickPrevious()}"
+            />
+
+        <ImageButton
+            android:id="@+id/button_pause"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:src="@drawable/ic_pause_white"
+            android:tint="@color/colorPrimary"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/button_stop"
+            app:layout_constraintStart_toEndOf="@+id/button_pre"
+            app:layout_constraintEnd_toStartOf="@+id/button_next"
+            app:layout_constraintDimensionRatio="w, 1:2.5"
+            android:onClick="@{() -> vm.onClickPause()}"
+            />
+
+        <ImageButton
+            android:id="@+id/button_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:src="@drawable/ic_fast_forward_white"
+            android:tint="@color/colorPrimary"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/button_stop"
+            app:layout_constraintStart_toEndOf="@+id/button_pause"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_pause"
+            app:layout_constraintWidth_percent=".25"
+            android:onClick="@{() -> vm.onClickNext()}"
+            />
+
+        <Button
+            android:id="@+id/button_stop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:text="@string/stop"
+            android:textSize="36sp"
+            android:fontFamily="@font/reko_font"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="w, 1:5"
+            android:onClick="@{() -> vm.onClickStop()}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

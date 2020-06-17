@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="workout_list">
+        <item>스트레칭</item>
+        <item>복근운동</item>
+    </string-array>
+
+    <array name="workout_content_list">
+        <item>@array/stretches</item>
+        <item>@array/workout_abs</item>
+    </array>
+
+    <array name="stretches">
+        <item>@array/stretch_hamstring_stretch</item>
+        <item>@array/stretch_reclining_twist</item>
+        <item>@array/stretch_cat_n_cow_stretch</item>
+        <item>@array/stretch_child_pose</item>
+        <item>@array/stretch_cobra_pose</item>
+        <item>@array/stretch_bridge_pose</item>
+    </array>
+
+    <array name="workout_abs">
+        <item>@array/abs_bird_dog</item>
+        <item>@array/abs_mountain_climber</item>
+        <item>@array/abs_spider_plank</item>
+        <item>@array/abs_side_plank_rotation</item>
+        <item>@array/abs_double_crunch</item>
+        <item>@array/abs_crunch</item>
+        <item>@array/abs_oblique_crunch</item>
+        <item>@array/abs_heel_toe_touch</item>
+        <item>@array/abs_plank</item>
+        <item>@array/stretch_cobra_pose</item>
+    </array>
+
+
+    <string-array name="stretch_hamstring_stretch">
+        <item>햄스트링 스트레칭</item>
+        <item>[종아리 + 허벅지]\n\n한쪽 다리를 의자 위에 올린다.\n\n요추의 전만을 정상적으로 유지한다.\n\n요추의 전만이 유지된 상태로 고관절을 이용해 천천히 허리를 굽힌다.\n\n당겨지는 느낌이 들면 유지한다.\n\n당겨지는 느낌이 아닌 허리 쪽 통증이나 이상감각이 생기면 멈춰야 한다.</item>
+        <item>https://mblogthumb-phinf.pstatic.net/MjAxODA3MTdfMTgg/MDAxNTMxNzk3NzMwMzQz.1oVffxy70cWlFykPvPHd4hWiZ-w29H5ht45KXz63SEsg.P3QQylOVzoe9OTManiiljzXM29niPAt6skVAE37muWIg.JPEG.eng33/DSC04642.jpg?type=w800</item>
+    </string-array>
+
+    <string-array name="stretch_reclining_twist">
+        <item>리클라이닝 트위스트</item>
+        <item>[골반교정 + 전신]\n\n다리를 펼친 상태에서 바닥에 누워 한쪽 무릎을 가슴에 껴안습니다.\n\n반대쪽 손을 사용하여 무릎을 몸을 가로 질러 손쪽으로 안내하고 그 반대쪽 엉덩이가 위로 올라가도록 돌려준다.\n\n무릎을 짚은 반대쪽 팔을 팔방향으로 확장하고 그 손끝을 응시하십시오.\n\n숨을들이 마신 다음 숨을 내쉬면서 부드럽게 깊게 틀어줍니다.</item>
+        <item>https://www.yogaasan.com/wp-content/uploads/2016/09/knee-down-twist.jpg</item>
+    </string-array>
+
+    <string-array name="stretch_cat_n_cow_stretch">
+        <item>캣 앤 카우 스트레칭</item>
+        <item>[복부강화 + 허리통증완화]\n\n양손과 양무릎으로 몸을 지탱합니다.\n\n무릎이 골반 아래에 일렬로 오게 하고 양손은 어깨 아래에 위치시킵니다.\n\n숨을 내쉬면서 복근에 힘을 주고 척추가 둥그렇게 말리도록 합니다.\n\n이 때 머리와 미저골(꽁무니뼈)이 서로 가까워지도록 합니다.\n\n척추를 아치 형태로 만들면서 숨을 들이마시고 가슴과 미저골이 서로 멀어지도록 밀어냅니다.</item>
+        <item>https://images.squarespace-cdn.com/content/v1/557ca60ae4b0db0dbac015c2/1479966416889-1X5HL7I2ED9NOK61GHSE/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmNhTL1csF4IG5y-qj70Wo08mNhyC0Li-nnGmSWmu-RPzBQHhRD1i-jLysqaC42N26/image-asset.gif</item>
+    </string-array>
+
+    <string-array name="stretch_child_pose">
+        <item>차일드 포즈</item>
+        <item>[척추 이완 + 혈액순환]\n\n무릎을 꿇고 상체를 앞으로 숙여 이마를 바닥에 닿도록 내린다.\n\n이때 숨을 내쉬며 허리를 쭉 펴주는 느낌으로 엉치뼈까지 늘려주며 동시에 목도 늘려준다.\n\n자세를 유지하며 복식호흡을 2~3 차례 후 숨을 내쉬며 천천히 앉은 자세로 돌아온다.</item>
+        <item>https://static.wixstatic.com/media/c5fc94_8aed0475277c4901b87cbb20c2fc2652~mv2.jpg</item>
+    </string-array>
+
+    <string-array name="stretch_cobra_pose">
+        <item>코브라 자세</item>
+        <item>[허리]\n\n팔은 편하게 몸 양측에 두고, 숨을 깊게 들이마시며 천천히 턱과 머리, 어깨를 들어올린다.\n\n동시에 팔과 손은 가슴쪽으로 옮겨와 상체를 들어올리고 머리는 뒤로 젖힌다.\n시선은 돋게 응시한다.\n\n숨을 내쉬면서 천천히 원래의 자세로 돌아온다.</item>
+        <item>https://img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/2xMI/image/T1uMzEeSs8_rygxZexWH9IlE7S8.png</item>
+    </string-array>
+
+    <string-array name="stretch_bridge_pose">
+        <item>브릿지 자세</item>
+        <item>[어깨 + 가슴 + 골반]\n\n똑바로 누운 후, 무름을 구부리고 발을 엉덩이 쪽으로 가까이 붙인다.\n\n손으로 발목을 잡고 깊은 숨을 들이 마시며 골반을 하늘방향으로 올린다.\n어깨가 몸무게를 지탱한다.\n\n시선은 배꼽을 향하며 자세를 일정시간 유지 후 숨을 천천히 내뱉으며 원래의 자세로 돌아온다.</item>
+        <item>https://gizelemonteiro.com.br/wp-content/uploads/alongamentos-errados-para-diastase.jpg</item>
+    </string-array>
+
+    <string-array name="abs_bird_dog">
+        <item>버드 독 자세</item>
+        <item>[코어, 골반 교정]\n\n양손과 양 무릎을 바닥에 대고 엎드려 한쪽팔을 쭉 뻗어주며 반대쪽 다리를 뒤로 쭉 뻗어준다.\n이때, 체중이 어느 한쪽으로 치우치지 않도록하며 5초간 균형을 유지해 준다.\n\n머리는 들거나 숙이지 말고 턱을 당겨 몸과 일자가 되도록 한다.\n\n상체에 힘이 실리면 어깨 부상의 위험이 있으므로 체간이 움직이지 않도록 자세에 집중해야 한다.</item>
+        <item>https://s3.amazonaws.com/photography.prod.demandstudios.com/675580d2-483c-4f02-9a39-72f7eecc7283.gif</item>
+    </string-array>
+
+    <string-array name="abs_mountain_climber">
+        <item>마운틴 클라이머</item>
+        <item>팔을 완전히 편 상태의 플랭크 자세에서 양 무릎을 번갈아가며 무릎을 가슴을 향해 당겨준다.\n\n무릎을 당길 때 허리가 내려가지 한게 복근에 힘을 주고 무릎을 당기면서 호흡을 입으로 뱉어준다.</item>
+        <item>https://i.pinimg.com/originals/18/27/be/1827be178c019b1dc6f8a8d8b4a7b0b8.gif</item>
+    </string-array>
+    
+    <string-array name="abs_spider_plank">
+        <item>스파이더 플랭크</item>
+        <item>팔꿈치를 바닥에 댄 플랭크 자세에서 무릎을 옆구리로 당겨주는 동작.\n\n무릎을 당기면서 고개를 같은 방향으로 돌려주며 호흡을 입으로 뱉어준다.</item>
+        <item>https://flabfix.com/wp-content/uploads/2019/05/Forearm-Spiderman-Plank.gif</item>
+    </string-array>
+
+    <string-array name="abs_side_plank_rotation">
+        <item>사이드 플랭크 로테이션</item>
+        <item>사이드 플랭크자세에서 몸통을 회전하면서 비틀어준다.\n\n팔꿈치와 어깨가 같은 선상에 위치하게 해야 어깨에 부담을 줄일 수 있다.</item>
+        <item>https://thumbs.gfycat.com/GlassFlamboyantBarnacle-size_restricted.gif</item>
+    </string-array>
+
+    <string-array name="abs_double_crunch">
+        <item>더블 크런치</item>
+        <item>다리와 상체를 동시에 일으켜주는 동작으로 내려가는 동작에서 복근의 긴장을 유지하며 천천히 내려주어야 한다.\n\n내려가는 동작 때 허리가 바닥에서 떨어지지 않아야 복근을 효과적으로 자극 및 허리 부담을 줄일 수 있다.</item>
+        <item>https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/2xMI/image/QWkgjq1mLjurp0rcqetyflk_Mrg.gif</item>
+    </string-array>
+
+    <string-array name="abs_crunch">
+        <item>크런치</item>
+        <item>상체를 말아올려 바닥에서 조금 떨어뜨려 상복부에 자극이 가도록 한다.\n\n날개뼈가 바닥에서 떨어질 정도로만 상체를 세우고 복근의 긴장감을 유지하도록 한다.</item>
+        <item>https://i.imgur.com/UJAnRhJ.gif</item>
+    </string-array>
+
+    <string-array name="abs_oblique_crunch">
+        <item>오블리끄 크런치</item>
+        <item>좌, 우로 몸통을 돌려주어 옆구리 부위로 상체를 일으켜 세워준다.\n\n날개뼈가 바닥에서 떨어지는 정도로만 상체를 일으키고 천천히 내려가도록 한다.</item>
+        <item>https://newlife.com.cy/wp-content/uploads/2019/12/06351301-Oblique-Crunches-Floor_waist_360.gif</item>
+    </string-array>
+
+    <string-array name="abs_heel_toe_touch">
+        <item>힐 토 터치</item>
+        <item>크런치에서 상체를 세운 자세로 좌, 우로 몸통을 기울여 발뒤꿈치를 터치해 주는 동작.\n\n턱이나 목에 과도한 힘이 들어가지 않게 날개뼈만 바닥에서 떨어뜨린 자세로 실행</item>
+        <item>https://the-optimal-you.com/wp-content/uploads/2018/03/Heel-Touch-GIF.gif</item>
+    </string-array>
+
+    <string-array name="abs_plank">
+        <item>플랭크</item>
+        <item>엎드린 자세에서 팔뚝으로 중심을 잡고 다리는 약간 벌린 상태로 일자를 유지한다.\n\n팔꿈치와 어깨는 일자를 유지한다.\n복부에 힘을 주고 몸을 앞으로 들어 올린다.\n턱은 약간 잡아당긴다.\n운동을 실시하는 동안 복근을 계속 수축하게 한다.\n동시에 둔부에 힘을 주고 발가락을 바닥에 지지대 삼아 뒤꿈치를 밀어 주면서 하체 전체를 뒤로 밀어내는 감각으로 뻗으면 엉덩이도 자연스럽게 내려오고 어깨와 팔에 하중이 경감된다.\n고개는 너무 떨구는 일이 없도록 한다.\n\n견갑골이 익상되면 절대로 안 된다. 전거근을 이용해 견갑골을 최대한 갈비뼈에 붙여야 한다.\n골반을 전방경사시키면 안 된다. 이것 또한 복부에 힘을 풀고 전방경사시키면 쉽게 버틸 수 있지만 허리에 무리가 간다.</item>
+        <item>https://img1.daumcdn.net/thumb/R720x0/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fliveboard%2Fmuscleandfitness%2F831286167b1447b08f89f0fd839b51b9.JPG</item>
+    </string-array>
+
+
+
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.dom_project.tabata_timer.viewmodel.CircuitListViewModel" />
+        <variable
+            name="item"
+            type="com.dom_project.tabata_timer.model.local.entity.Circuit" />
+        <variable
+            name="workoutCount"
+            type="Integer" />
+
+        <variable
+            name="activity"
+            type="com.dom_project.tabata_timer.ui.circuit_list.CircuitListActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@drawable/item_background"
+        >
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.name}"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:fontFamily="@font/ghana_choco"
+            android:textAlignment="center"
+            android:onClick="@{(view) -> vm.onClickCircuitName(view, item, activity)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".6"
+            />
+
+        <TextView
+            android:id="@+id/item_workout_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/time_sec(item.workoutTime)}"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_workout"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:lines="1"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:fontFamily="@font/reko_font"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_name"
+            app:layout_constraintBottom_toTopOf="@+id/item_repeat_count"
+            app:layout_constraintWidth_percent=".2"
+            />
+
+        <TextView
+            android:id="@+id/item_rest_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/time_sec(item.restTime)}"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_rest"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:lines="1"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:fontFamily="@font/reko_font"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_workout_time"
+            app:layout_constraintBottom_toTopOf="@+id/item_total_time"
+            app:layout_constraintWidth_percent=".2"
+            />
+
+        <TextView
+            android:id="@+id/item_repeat_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_repeat"
+            android:drawableTint="@color/colorAccent"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:lines="1"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:fontFamily="@font/reko_font"
+            text="@{item.repeatCount}"
+            app:layout_constraintStart_toEndOf="@+id/item_name"
+            app:layout_constraintTop_toBottomOf="@+id/item_workout_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".16"
+            />
+
+        <TextView
+            android:id="@+id/item_total_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{@string/time_minutes(((item.workoutTime+item.restTime)*item.repeatCount*workoutCount)/60)}"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_total_time"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:lines="1"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:fontFamily="@font/reko_font"
+            app:layout_constraintTop_toBottomOf="@+id/item_rest_time"
+            app:layout_constraintStart_toEndOf="@+id/item_repeat_count"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".24"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

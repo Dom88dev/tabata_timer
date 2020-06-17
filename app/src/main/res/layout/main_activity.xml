@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.dom_project.tabata_timer.model.local.entity.CircuitProgram"/>
+        <variable
+            name="vm"
+            type="com.dom_project.tabata_timer.viewmodel.MainViewModel" />
+
+        <variable
+            name="circuitPrograms"
+            type="java.util.List&lt;CircuitProgram>" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity"
+        android:background="@android:color/holo_blue_light"
+        >
+
+        <TextView
+            android:id="@+id/pre_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="살"
+            android:textSize="40sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/reko_font"
+            app:layout_constraintBottom_toTopOf="@+id/app_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pre_text2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            />
+
+        <TextView
+            android:id="@+id/pre_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="빼기 위한"
+            android:textSize="35sp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/ghana_choco"
+            app:layout_constraintBaseline_toBaselineOf="@id/pre_text1"
+            app:layout_constraintStart_toEndOf="@+id/pre_text1"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Dom's WORKOUT"
+            android:textSize="40sp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/jalnan"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent=".9"
+            viewModel="@{vm}"
+            circuits="@{circuitPrograms}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

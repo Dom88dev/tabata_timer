@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Dom\'s Tabata Timer</string>
+
+    <string name="celsius">%1$.1f&#176;C</string>
+    <string name="celsius_with_bracelet">(%1$.1f&#176;C)</string>
+
+    <!--  String.format 메소드를 사용할 때 %기호를 그냥 사용하면 안되고 %%로 사용해야한다.  -->
+    <string name="percentage">%1$d%%</string>
+
+    <string name="time_sec">%1$d초</string>
+    <string name="time_minutes">%1$d분</string>
+    <string name="times">%1$d회</string>
+
+    <string name="order">%1$d/%2$d</string>
+    <string name="set_order">SET %1$d/%2$d</string>
+
+    <string name="ready">준비</string>
+    <string name="rest">휴식</string>
+    <string name="complete">COMPLETE</string>
+    <string name="stop">STOP</string>
+
+    <string name="workout_time">운동 시간</string>
+    <string name="rest_time">휴식 시간</string>
+    <string name="repeat_time">세트 수</string>
+</resources>
